@@ -20,7 +20,7 @@ const DaisyNav = () => {
         }
         
      </div>
-      <ul className={`md:flex absolute md:static shadow-xl rounded-xl px- py-2 ${open ? '' : 'hidden'} bg-green-700 justify-around items-center`}>
+      <ul className={`md:flex absolute md:static shadow-xl rounded-xl px-3 py-2 ${open ? '' : 'hidden'} bg-green-700 justify-around items-center`}>
         {
           routes.map(route => <NavBar key={route.id} route={route} ></NavBar>)
         }
