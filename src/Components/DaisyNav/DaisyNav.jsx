@@ -1,8 +1,9 @@
+import { useState } from "react";
 import NavBar from "../NavBar/NavBar";
-import { RiMenu2Fill } from 'react-icons/ri';
+import { AiOutlineMenu,AiOutlineClose  } from "react-icons/ai";
 
 const DaisyNav = () => {
-
+  const [open, setOpen] = useState(false);
   const routes = [
   { id: 1, path: "/", name: "Home" },
   { id: 2, path: "/about", name: "About Us" },
@@ -13,7 +14,12 @@ const DaisyNav = () => {
 
   return (
     <div>
-      <RiMenu2Fill className="text-3xl md:hidden"></RiMenu2Fill>
+      <div onClick={() => setOpen(!open)} className="md:hidden text-4xl">
+        {
+          open === true ? <AiOutlineClose></AiOutlineClose>:  <AiOutlineMenu></AiOutlineMenu>
+        }
+        
+     </div>
       <ul className="md:flex justify-around items-center">
         {
           routes.map(route => <NavBar key={route.id} route={route} ></NavBar>)
